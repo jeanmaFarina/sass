@@ -26,6 +26,12 @@ h3
   text-align: center
   font-size: 1.5em
   margin-bottom: 0px
+
+@for $i from 1 through 6
+    .advantages>.adv-item:nth-of-type(#{$i})
+        color: lighten($main_color, $i * 4%)
+
+
 article
   display: flex
   flex-wrap: wrap
