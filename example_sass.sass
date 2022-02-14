@@ -1,0 +1,81 @@
+@import "abstract"
+
+body
+  font: 100% "Space Mono", monospace
+  color: $main_color
+  margin: 0
+  padding: $paddin
+  background-color: $background_color
+  overflow-x: hidden
+.main
+  padding: $paddin 1em
+  padding-top: 0
+  padding-bottom: 0
+footer
+  h3
+    padding: $paddin*2
+@mixin shad($color)
+   -webkit-box-shadow: 10px 10px 15px -4px $color
+   -moz-box-shadow: 10px 10px 15px -4px $color
+   box-shadow: 10px 10px 15px -4px $color
+h1,h2,h3
+  color: $title_color
+h1
+  text-align: center
+h3
+  text-align: center
+  font-size: 1.5em
+  margin-bottom: 0px
+article
+  display: flex
+  flex-wrap: wrap
+  section
+      flex-grow: 1
+      flex-basis: 45%
+      border: 1px $border_color solid
+      @include shad($shadow)
+      padding: 16px
+      margin: 16px
+      clear: both
+      overflow: auto
+      box-sizing: border-box
+      #selling-points
+        flex-grow: 2
+        flex-basis: 100%
+  code
+    background: $code_background
+    border: 1px solid $main_color
+    color: $border_color
+    page-break-inside: avoid
+    font-family: monospace
+    font-size: 15px
+    line-height: 1.6
+    margin-bottom: 1.6em
+    max-width: 100%
+    overflow: auto
+    padding: 1em 1.5em
+    display: block
+    word-wrap: break-word
+    .before
+      float: left
+      width: 40%
+
+    .after
+      float: right
+      width: 40%
+.display_message
+  border: 1px solid #8C8C8C
+  padding: 16px
+  color: $background_color
+.success
+  @extend .display_message
+  background-color: $success_color
+.error
+  @extend .display_message
+  background-color: $error_color
+  &:hover
+    background-color: $success_color
+.warning
+  @extend .display_message
+  background-color: $warning_color
+/*test comment 2*/
